@@ -56,9 +56,25 @@ def show_menu():
     print("#### Expense Tracker Menu ####")
     for i, option in enumerate(menu_options, 1):
         print("%i. %s" % (i, option))
-    
-    show_menu()
-    add_expense()
-    view_expenses()
-    total_spent()
-    export_to_file()
+
+def main():
+    while True:
+        show_menu()
+
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            add_expense()
+        elif choice == '2':
+            view_expenses()
+        elif choice == '3':
+            total_spent()
+        elif choice == '4':
+            export_to_file()
+        elif choice == '5':
+            print("Exiting... 👋")
+        else:
+            print("Invalid option!\n")
+
+if __name__ == "__main__":
+    main()
