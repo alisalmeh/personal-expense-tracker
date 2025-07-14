@@ -32,5 +32,10 @@ def view_expenses():
     for i, exp in enumerate(expenses, 1):
         print(f"{i}. {exp['category']} | {exp['amount']} | {exp['date']}")
 
+def total_spent():
+    total = sum(exp['amount'] for exp in expenses)
+    print(f"\n💰 Total spent: {total} Toman\n")
+
 add_expense()
 view_expenses()
+total_spent()
