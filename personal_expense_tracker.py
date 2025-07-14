@@ -36,6 +36,14 @@ def total_spent():
     total = sum(exp['amount'] for exp in expenses)
     print(f"\n💰 Total spent: {total} Toman\n")
 
+def export_to_file():
+    with open('expenses.csv', 'w') as f:
+        f.write("Date,Category,Amount\n")
+        for exp in expenses:
+            f.write(f"{exp['category']},{exp['amount']},{exp['date']}\n")
+    print("📄 Expenses exported to 'expenses.csv'.\n")
+
 add_expense()
 view_expenses()
 total_spent()
+export_to_file()
