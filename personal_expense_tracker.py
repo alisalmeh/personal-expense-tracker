@@ -43,7 +43,21 @@ def export_to_file():
             f.write(f"{exp['category']},{exp['amount']},{exp['date']}\n")
     print("📄 Expenses exported to 'expenses.csv'.\n")
 
-add_expense()
-view_expenses()
-total_spent()
-export_to_file()
+def show_menu():
+    menu_options = [
+        "Add Expense",
+        "View Expenses",
+        "View Total Spent",
+        "Export to File",
+        "Quit"
+    ]
+
+    print("#### Expense Tracker Menu ####")
+    for i, option in enumerate(menu_options, 1):
+        print("%i. %s" % (i, option))
+    
+    show_menu()
+    add_expense()
+    view_expenses()
+    total_spent()
+    export_to_file()
