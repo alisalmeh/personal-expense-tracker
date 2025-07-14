@@ -26,7 +26,7 @@ def add_expense():
     print("✅ Expense added!\n")
 
 def view_expenses():
-    if expenses == None:
+    if not expenses:
         print("No expenses yet!")
 
     for i, exp in enumerate(expenses, 1):
@@ -72,8 +72,11 @@ def main():
             export_to_file()
         elif choice == '5':
             print("Exiting... 👋")
+            break
         else:
             print("Invalid option!\n")
+
+        print(input("Press the enter button."))
 
 if __name__ == "__main__":
     main()
