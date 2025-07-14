@@ -25,4 +25,12 @@ def add_expense():
     expenses.append(expense)
     print("✅ Expense added!\n")
 
+def view_expenses():
+    if expenses == None:
+        print("No expenses yet!")
+
+    for i, exp in enumerate(expenses, 1):
+        print(f"{i}. {exp['category']} | {exp['amount']} | {exp['date']}")
+
 add_expense()
+view_expenses()
