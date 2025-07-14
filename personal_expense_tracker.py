@@ -40,8 +40,7 @@ def export_to_file():
     with open('expenses.csv', 'w') as f:
         f.write("Date,Category,Amount\n")
         for exp in expenses:
-            f.write("{3},{1},{2}\n"
-                    .format(exp['category'], exp['amount'], exp['date']))
+            f.write(f"{exp['date']},{exp['category']},{exp['amount']}\n")
     print("📄 Expenses exported to 'expenses.csv'.\n")
 
 def show_menu():
